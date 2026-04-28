@@ -10,7 +10,7 @@ export default function Header() {
     <S.Wrapper>
       <Profile
         url={'https://avatars.githubusercontent.com/u/83855546'}
-        name={'yechan0616'}
+        name={'Yechan Moon'}
       />
       <Divider />
       <S.Group>
