@@ -1,7 +1,7 @@
+'use client'
+
+import DashboardMain from './main'
+
 export default function Dashboard() {
-  return (
-    <>
-      Dashboard
-    </>
-  )
+  return <DashboardMain />
 }

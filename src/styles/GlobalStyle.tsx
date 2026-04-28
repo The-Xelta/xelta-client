@@ -53,6 +53,7 @@ const Styled = css`
   img {
     display: block;
     max-width: 100%;
+    box-shadow: none;
   }
 
   ul,
