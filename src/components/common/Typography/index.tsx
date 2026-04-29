@@ -12,6 +12,7 @@ interface TypographyProps {
   weight?: TypographyWeight
   as?: ElementType
   color?: string
+  opacity?: number
   className?: string
 }
 
@@ -22,6 +23,7 @@ export default function Typo(
     weight = 'regular',
     as = 'p',
     color,
+    opacity,
     className
   }: TypographyProps
 ) {
@@ -31,6 +33,7 @@ export default function Typo(
       variant={variant}
       weight={weight}
       color={color}
+      opacity={opacity}
       className={className}
     >
       {children}

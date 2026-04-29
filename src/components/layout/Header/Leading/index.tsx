@@ -1,0 +1,38 @@
+'use client'
+
+import { Typo, Icon } from 'components'
+import { SidebarIcon, StarIcon } from '@phosphor-icons/react'
+
+import * as S from './styled'
+
+interface LeadingProps {
+  onToggleSidebar?: () => void
+}
+
+export default function Leading({ onToggleSidebar }: LeadingProps) {
+  return (
+    <S.Wrapper>
+      <S.Content>
+        <div onClick={onToggleSidebar} style={{ cursor: 'pointer' }}>
+          <Icon icon={SidebarIcon} size={16} />
+        </div>
+        <Icon icon={StarIcon} size={16} />
+      </S.Content>
+      <S.Content>
+        <S.TextButton>
+          <Typo variant={'captionS'} color={'rgba(0, 0, 0, 0.40)'}>
+            Dashboards
+          </Typo>
+        </S.TextButton>
+        <Typo variant={'captionS'} color={'rgb(0, 0, 0, 0.1)'}>
+          /
+        </Typo>
+        <S.TextButton>
+          <Typo variant={'captionS'} color={'rgba(0, 0, 0)'}>
+            Overview
+          </Typo>
+        </S.TextButton>
+      </S.Content>
+    </S.Wrapper>
+  )
+}

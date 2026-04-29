@@ -12,12 +12,14 @@ interface StyledTypographyProps {
   variant: TypographyVariant;
   weight: TypographyWeight;
   color?: string;
+  opacity?: number;
 }
 
 export const StyledTypography = styled.p<StyledTypographyProps>`
   margin: 0;
   padding: 0;
   color: ${({ color }) => color ?? "inherit"};
+  opacity: ${({ opacity }) => opacity ?? 1};
   ${({ variant, weight }) => {
   const typo = Typography[variant];
   return css`
