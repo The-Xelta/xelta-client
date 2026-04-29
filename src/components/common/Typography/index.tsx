@@ -1,10 +1,7 @@
 import { ReactNode, ElementType } from 'react'
 import * as S from './styled'
 
-import {
-  TypographyVariant,
-  TypographyWeight
-} from 'styles'
+import { TypographyVariant, TypographyWeight } from 'styles'
 
 interface TypographyProps {
   children: ReactNode
@@ -16,17 +13,15 @@ interface TypographyProps {
   className?: string
 }
 
-export default function Typo(
-  {
-    children,
-    variant,
-    weight = 'regular',
-    as = 'p',
-    color,
-    opacity,
-    className
-  }: TypographyProps
-) {
+export default function Typo({
+  children,
+  variant,
+  weight = 'regular',
+  as = 'p',
+  color,
+  opacity,
+  className,
+}: TypographyProps) {
   return (
     <S.StyledTypography
       as={as}

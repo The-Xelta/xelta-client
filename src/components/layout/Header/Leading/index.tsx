@@ -3,7 +3,7 @@
 import { Typo, Icon } from 'components'
 import { SidebarIcon, StarIcon } from '@phosphor-icons/react'
 
-import * as S from './styled'
+import * as S from './leading.styled'
 
 interface LeadingProps {
   onToggleSidebar?: () => void
@@ -13,9 +13,9 @@ export default function Leading({ onToggleSidebar }: LeadingProps) {
   return (
     <S.Wrapper>
       <S.Content>
-        <div onClick={onToggleSidebar} style={{ cursor: 'pointer' }}>
+        <S.IconWrapper onClick={onToggleSidebar}>
           <Icon icon={SidebarIcon} size={16} />
-        </div>
+        </S.IconWrapper>
         <Icon icon={StarIcon} size={16} />
       </S.Content>
       <S.Content>

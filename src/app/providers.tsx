@@ -6,11 +6,7 @@ import createCache from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
 import { GlobalStyle } from 'styles'
 
-export default function Providers(
-  { children }: {
-    children: ReactNode
-  }
-) {
+export default function Providers({ children }: { children: ReactNode }) {
   const [cache] = useState(() => {
     const cache = createCache({ key: 'css' })
     cache.compat = true

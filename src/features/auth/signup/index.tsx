@@ -7,7 +7,9 @@ export default function SignUpPage() {
     <Container>
       <Content>
         <Header>
-          <Typo variant={'headlineM'} weight={'bold'}>Welcome Back</Typo>
+          <Typo variant={'headlineM'} weight={'bold'}>
+            Welcome Back
+          </Typo>
           <Typo variant={'captionL'}>Sign in to continue with Xelta</Typo>
         </Header>
         <Form>

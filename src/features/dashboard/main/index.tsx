@@ -12,9 +12,7 @@ export default function DashboardMain() {
       {isSidebarOpen && <Sidebar />}
       <S.MainContainer>
         <Header onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-        <S.ContentArea>
-          {/* 실제 대시보드 내용이 들어갈 자리 */}
-        </S.ContentArea>
+        <S.ContentArea>{/* 실제 대시보드 내용이 들어갈 자리 */}</S.ContentArea>
       </S.MainContainer>
     </S.Wrapper>
   )

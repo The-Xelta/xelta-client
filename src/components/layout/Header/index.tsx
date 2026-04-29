@@ -1,6 +1,6 @@
 'use client'
 
-import * as S from './styled'
+import * as S from './header.styled'
 import Leading from './Leading'
 import Trailing from './Trailing'
 

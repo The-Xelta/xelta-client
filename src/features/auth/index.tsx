@@ -12,9 +12,7 @@ export default function AuthPage() {
   const [state, setState] = useState<AuthState>('signup')
   return (
     <Wrapper>
-      <Content>
-        {state === 'login' ? <LoginPage /> : <SignupPage />}
-      </Content>
+      <Content>{state === 'login' ? <LoginPage /> : <SignupPage />}</Content>
     </Wrapper>
   )
 }

@@ -1,1 +1,1 @@
-사이드바 수정중
+Header/Trailing 수정 필요
