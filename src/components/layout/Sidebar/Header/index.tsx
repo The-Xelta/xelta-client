@@ -1,16 +1,34 @@
 'use client'
 
-import { useState } from 'react'
 import { Typo } from 'components'
+import {
+  type DashboardPageId,
+  HEADER_LABELS,
+  type HeaderTabKey,
+  NAVIGATION_ITEMS,
+} from 'features/dashboard/navigation'
+import { useState } from 'react'
 
 import Avatar from '../Avatar'
-import { HEADER_LABELS, HEADER_ITEMS } from '../constants'
 import * as S from './header.styled'
 
-type TabKey = 'favorites' | 'recently'
+interface HeaderProps {
+  onChangeActiveId?: (id: DashboardPageId) => void
+  favoriteIds?: DashboardPageId[]
+  recentIds?: DashboardPageId[]
+}
 
-export default function Header() {
-  const [activeTab, setActiveTab] = useState<TabKey>('favorites')
+export default function Header({
+  onChangeActiveId,
+  favoriteIds = [],
+  recentIds = [],
+}: HeaderProps) {
+  const [activeTab, setActiveTab] = useState<HeaderTabKey>('favorites')
+
+  const items =
+    activeTab === 'favorites'
+      ? NAVIGATION_ITEMS.filter((item) => favoriteIds.includes(item.id))
+      : NAVIGATION_ITEMS.filter((item) => recentIds.includes(item.id))
 
   return (
     <S.Wrapper>
@@ -39,14 +57,22 @@ export default function Header() {
         })}
       </S.Tabs>
 
-      {HEADER_ITEMS.map((menu) => (
-        <S.Item key={menu.label}>
-          <S.ItemIcon>
-            <S.Indicator />
-          </S.ItemIcon>
-          <Typo variant='button2'>{menu.label}</Typo>
-        </S.Item>
-      ))}
+      {items.length > 0 ? (
+        items.map((menu) => (
+          <S.Item key={menu.id} onClick={() => onChangeActiveId?.(menu.id)}>
+            <S.ItemIcon>
+              <S.Indicator />
+            </S.ItemIcon>
+            <Typo variant='button2'>{menu.label}</Typo>
+          </S.Item>
+        ))
+      ) : (
+        <S.EmptyState>
+          <Typo variant='button2' opacity={0.4}>
+            Nothing
+          </Typo>
+        </S.EmptyState>
+      )}
     </S.Wrapper>
   )
 }

@@ -4,7 +4,7 @@ import type {
   Icon as PhosphorIcon,
   IconProps as PhosphorIconProps,
 } from '@phosphor-icons/react'
-import * as S from './styled'
+import * as S from './icon.styled'
 
 interface IconProps extends PhosphorIconProps {
   icon: PhosphorIcon
@@ -20,7 +20,7 @@ export default function Icon({
   ...props
 }: IconProps) {
   return (
-    <S.Wrapper style={{ opacity }} disabled={disabled} size={size}>
+    <S.Wrapper style={{ opacity }} disabled={disabled}>
       <S.Content size={size}>
         <Icon size={size} {...props} />
       </S.Content>

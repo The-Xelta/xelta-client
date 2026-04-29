@@ -1,18 +1,27 @@
-'use client'
-
 import * as S from './header.styled'
-import Leading from './Leading'
-import Trailing from './Trailing'
+import HeaderLeading from './Leading'
 
 interface HeaderProps {
   onToggleSidebar?: () => void
+  activePageName?: string
+  isFavorite?: boolean
+  onToggleFavorite?: () => void
 }
 
-export default function Header({ onToggleSidebar }: HeaderProps) {
+export default function Header({
+  onToggleSidebar,
+  activePageName = 'Overview',
+  isFavorite,
+  onToggleFavorite,
+}: HeaderProps) {
   return (
     <S.Wrapper>
-      <Leading onToggleSidebar={onToggleSidebar} />
-      <Trailing />
+      <HeaderLeading
+        onToggleSidebar={onToggleSidebar}
+        activePageName={activePageName}
+        isFavorite={isFavorite}
+        onToggleFavorite={onToggleFavorite}
+      />
     </S.Wrapper>
   )
 }

@@ -87,5 +87,13 @@ export const Indicator = styled.div`
 
   // Style
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.20);
+  background: rgba(0, 0, 0, 0.2);
+`
+
+export const EmptyState = styled.div`
+  // Layout
+  display: flex;
+  padding: 0.5rem 0.75rem;
+  align-items: center;
+  align-self: stretch;
 `

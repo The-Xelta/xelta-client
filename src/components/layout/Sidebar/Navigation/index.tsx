@@ -1,16 +1,24 @@
 'use client'
 
-import { useState } from 'react'
-
 import { Typo } from 'components'
+import {
+  type DashboardPageId,
+  NAVIGATION_SECTIONS,
+} from 'features/dashboard/navigation'
+
 import NavItem from '../NavItem'
-import { NAVIGATION_SECTIONS } from '../constants'
 
 import * as S from './nav.styled'
 
-export default function Navigation() {
-  const [activeId, setActiveId] = useState('overview')
+interface NavigationProps {
+  activeId?: DashboardPageId
+  onChangeActiveId?: (id: DashboardPageId) => void
+}
 
+export default function Navigation({
+  activeId,
+  onChangeActiveId,
+}: NavigationProps) {
   return (
     <S.Wrapper>
       {NAVIGATION_SECTIONS.map((section) => (
@@ -25,7 +33,7 @@ export default function Navigation() {
               icon={item.icon}
               label={item.label}
               active={activeId === item.id}
-              onClick={() => setActiveId(item.id)}
+              onClick={() => onChangeActiveId?.(item.id)}
             />
           ))}
         </S.Section>

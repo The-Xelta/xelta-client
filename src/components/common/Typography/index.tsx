@@ -1,7 +1,8 @@
-import { ReactNode, ElementType } from 'react'
-import * as S from './styled'
+import type { ElementType, ReactNode } from 'react'
 
-import { TypographyVariant, TypographyWeight } from 'styles'
+import type { TypographyVariant, TypographyWeight } from 'styles'
+
+import * as S from './typography.styled'
 
 interface TypographyProps {
   children: ReactNode

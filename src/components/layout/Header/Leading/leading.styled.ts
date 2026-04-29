@@ -32,6 +32,7 @@ export const TextButton = styled.button`
   
   // Style
   border-radius: 0.75rem;
+  cursor: default;
   &:hover {
     background: rgba(0, 0, 0, 0.04);
   }

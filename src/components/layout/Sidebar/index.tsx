@@ -1,14 +1,32 @@
 'use client'
 
-import Header from './Header'
+import type { DashboardPageId } from 'features/dashboard/navigation'
+
+import SidebarHeader from './Header'
 import Navigation from './Navigation'
 import * as S from './sidebar.styled'
 
-export default function Sidebar() {
+interface SidebarProps {
+  activeId?: DashboardPageId
+  onChangeActiveId?: (id: DashboardPageId) => void
+  favoriteIds?: DashboardPageId[]
+  recentIds?: DashboardPageId[]
+}
+
+export default function Sidebar({
+  activeId,
+  onChangeActiveId,
+  favoriteIds = [],
+  recentIds = [],
+}: SidebarProps) {
   return (
     <S.Container>
-      <Header />
-      <Navigation />
+      <SidebarHeader
+        onChangeActiveId={onChangeActiveId}
+        favoriteIds={favoriteIds}
+        recentIds={recentIds}
+      />
+      <Navigation activeId={activeId} onChangeActiveId={onChangeActiveId} />
     </S.Container>
   )
 }

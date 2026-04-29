@@ -9,7 +9,7 @@ import SignupPage from './signup'
 type AuthState = 'login' | 'signup'
 
 export default function AuthPage() {
-  const [state, setState] = useState<AuthState>('signup')
+  const [state, _setState] = useState<AuthState>('signup')
   return (
     <Wrapper>
       <Content>{state === 'login' ? <LoginPage /> : <SignupPage />}</Content>

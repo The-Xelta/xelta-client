@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
   padding: 1.25rem 1.75rem;
-  justify-content: space-between;
   align-items: center;
   
   // Style

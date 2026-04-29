@@ -1,6 +1,6 @@
 'use client'
 
-import * as S from './styled'
+import * as S from './login.styled'
 
 export default function LoginPage() {
   return (

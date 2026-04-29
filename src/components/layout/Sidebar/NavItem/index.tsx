@@ -2,7 +2,7 @@
 
 import type { Icon as PhosphorIcon } from '@phosphor-icons/react'
 
-import { Typo, Icon as AppIcon } from 'components'
+import { Icon as AppIcon, Typo } from 'components'
 
 import * as S from './navItem.styled'
 
@@ -29,14 +29,12 @@ export default function NavItem({
         <AppIcon
           icon={icon}
           size={20}
-          disabled={true}
+          disabled={disabled}
           weight={active ? 'fill' : 'regular'}
           opacity={active ? 1 : 0.4}
         />
 
-        <Typo variant='button2' opacity={active ? 1 : 0.4}>
-          {label}
-        </Typo>
+        <Typo variant='button2'>{label}</Typo>
       </S.Content>
     </S.Wrapper>
   )
