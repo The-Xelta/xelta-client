@@ -1,5 +1,6 @@
 import * as S from './header.styled'
 import HeaderLeading from './Leading'
+import HeaderTrailing from './Trailing'
 
 interface HeaderProps {
   onToggleSidebar?: () => void
@@ -22,6 +23,7 @@ export default function Header({
         isFavorite={isFavorite}
         onToggleFavorite={onToggleFavorite}
       />
+      <HeaderTrailing />
     </S.Wrapper>
   )
 }
