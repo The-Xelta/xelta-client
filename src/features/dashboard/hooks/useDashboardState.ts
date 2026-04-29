@@ -1,5 +1,6 @@
 'use client'
 
+import type { Dispatch, SetStateAction } from 'react'
 import { useEffect, useState } from 'react'
 
 import {
@@ -8,7 +9,7 @@ import {
   MAX_FAVORITE_COUNT,
   MAX_RECENT_COUNT,
   NAVIGATION_ITEMS,
-} from './navigation'
+} from '../navigation'
 
 const FAVORITES_STORAGE_KEY = 'xelta.favoriteIds'
 const DEFAULT_ACTIVE_PAGE_ID: DashboardPageId = 'overview'
@@ -41,7 +42,19 @@ function getStoredFavoriteIds() {
   }
 }
 
-export function useDashboardState() {
+interface UseDashboardStateResult {
+  activeId: DashboardPageId
+  activeItem: (typeof NAVIGATION_ITEMS)[number]
+  favoriteIds: DashboardPageId[]
+  isFavorite: boolean
+  isSidebarOpen: boolean
+  recentIds: DashboardPageId[]
+  setActiveId: Dispatch<SetStateAction<DashboardPageId>>
+  toggleFavorite: () => void
+  toggleSidebar: () => void
+}
+
+export function useDashboardState(): UseDashboardStateResult {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   const [activeId, setActiveId] = useState<DashboardPageId>(
     DEFAULT_ACTIVE_PAGE_ID,

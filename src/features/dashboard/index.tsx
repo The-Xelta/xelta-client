@@ -3,8 +3,8 @@
 import { Header, Sidebar } from 'components'
 
 import * as S from './dashboard.styled'
+import { useDashboardState } from './hooks/useDashboardState'
 import { DASHBOARD_PAGE_COMPONENTS } from './pages/registry'
-import { useDashboardState } from './useDashboardState'
 
 export default function Dashboard() {
   const {

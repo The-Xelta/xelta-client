@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react'
 import type { DashboardPageId } from '../navigation'
 
 import AgentsPage from './agents'
@@ -18,4 +19,4 @@ export const DASHBOARD_PAGE_COMPONENTS = {
   overview: OverviewPage,
   security: SecurityPage,
   settings: SettingsPage,
-} satisfies Record<DashboardPageId, () => JSX.Element>
+} satisfies Record<DashboardPageId, ComponentType>

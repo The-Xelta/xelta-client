@@ -1,8 +1,0 @@
-export { default as AgentsPage } from './agents'
-export { default as AutomationPage } from './automation'
-export { default as ContainersPage } from './containers'
-export { default as InfrastructurePage } from './infrastructure'
-export { default as MonitoringPage } from './monitoring'
-export { default as OverviewPage } from './overview'
-export { default as SecurityPage } from './security'
-export { default as SettingsPage } from './settings'

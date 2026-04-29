@@ -10,8 +10,18 @@ import {
   ShieldIcon,
 } from '@phosphor-icons/react'
 
+export type DashboardPageId =
+  | 'overview'
+  | 'infrastructure'
+  | 'containers'
+  | 'agents'
+  | 'monitoring'
+  | 'automation'
+  | 'security'
+  | 'settings'
+
 export interface SidebarShortcutItem {
-  id: string
+  id: DashboardPageId
   label: string
 }
 
@@ -93,8 +103,6 @@ export const NAVIGATION_SECTIONS: SidebarNavigationSection[] = [
 export const NAVIGATION_ITEMS = NAVIGATION_SECTIONS.flatMap(
   (section) => section.items,
 )
-
-export type DashboardPageId = (typeof NAVIGATION_ITEMS)[number]['id']
 
 export const MAX_FAVORITE_COUNT = 2
 export const MAX_RECENT_COUNT = 2
